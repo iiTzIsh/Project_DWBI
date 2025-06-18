@@ -1,0 +1,1037 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{99740668-746C-40B2-ADDE-E8D6490CE582}" Name="employee_profiling.txt">
+      <DtsConnectionManagerID>employee_profiling.txt</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{75104A5D-0160-47CB-8682-9382C72A0B15}" Name="GG.txt">
+      <DtsConnectionManagerID>GG.txt</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{6D833B6B-6CF1-453D-AD6B-5CD5FA60C990}" Name="ISHARA.Chinook_Staging">
+      <DtsConnectionManagerID>ISHARA.Chinook_Staging</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}" Name="ISHARA.Chinook_Staging 1">
+      <DtsConnectionManagerID>ISHARA.Chinook_Staging 1</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{98134AA0-E059-40CF-977B-F44141BF9851}" Name="New Text Document.txt">
+      <DtsConnectionManagerID>New Text Document.txt</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table Schema="dbo" Table="StgEmployee" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table Schema="dbo" Table="StgEmployee" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table Schema="dbo" Table="StgEmployee" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table Schema="dbo" Table="StgEmployee" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table Schema="dbo" Table="StgEmployee" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="EmployeeId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="LastName" SqlDbType="NVarChar" MaxLength="20" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="FirstName" SqlDbType="NVarChar" MaxLength="20" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Title" SqlDbType="NVarChar" MaxLength="30" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="ReportsTo" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>1</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="BirthDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="HireDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Address" SqlDbType="NVarChar" MaxLength="70" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="City" SqlDbType="NVarChar" MaxLength="40" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="State" SqlDbType="NVarChar" MaxLength="40" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Country" SqlDbType="NVarChar" MaxLength="40" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="PostalCode" SqlDbType="NVarChar" MaxLength="10" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Phone" SqlDbType="NVarChar" MaxLength="24" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Fax" SqlDbType="NVarChar" MaxLength="24" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Email" SqlDbType="NVarChar" MaxLength="60" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="EmployeeId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>8</MaxValue>
+        <Mean>4.5</Mean>
+        <StdDev>2.29128784747792</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="ReportsTo" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>6</MaxValue>
+        <Mean>2.85714285714286</Mean>
+        <StdDev>2.0303814862217</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="BirthDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1947-09-19T00:00:00.0000000</MinValue>
+        <MaxValue>1973-08-29T00:00:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="HireDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2002-04-01T00:00:00.0000000</MinValue>
+        <MaxValue>2004-03-04T00:00:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="LastName" SqlDbType="NVarChar" MaxLength="20" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>4</MinLength>
+        <MaxLength>8</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="FirstName" SqlDbType="NVarChar" MaxLength="20" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>4</MinLength>
+        <MaxLength>8</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Title" SqlDbType="NVarChar" MaxLength="30" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>8</MinLength>
+        <MaxLength>19</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Address" SqlDbType="NVarChar" MaxLength="70" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>11</MinLength>
+        <MaxLength>27</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>27</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="City" SqlDbType="NVarChar" MaxLength="40" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>2</MinLength>
+        <MaxLength>11</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="State" SqlDbType="NVarChar" MaxLength="40" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>2</MinLength>
+        <MaxLength>2</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Country" SqlDbType="NVarChar" MaxLength="40" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>6</MinLength>
+        <MaxLength>6</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="PostalCode" SqlDbType="NVarChar" MaxLength="10" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>7</MinLength>
+        <MaxLength>7</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Phone" SqlDbType="NVarChar" MaxLength="24" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>16</MinLength>
+        <MaxLength>17</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>7</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Fax" SqlDbType="NVarChar" MaxLength="24" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>16</MinLength>
+        <MaxLength>17</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>7</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Email" SqlDbType="NVarChar" MaxLength="60" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>20</MinLength>
+        <MaxLength>24</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>21</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>22</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>23</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>24</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <KeyColumns>
+          <Column Name="EmployeeId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="EmployeeId" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>8</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>4</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>8</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <KeyColumns>
+          <Column Name="LastName" SqlDbType="NVarChar" MaxLength="20" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="LastName" SqlDbType="NVarChar" MaxLength="20" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>8</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Adams</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Callahan</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Edwards</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Johnson</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>King</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mitchell</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Park</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Peacock</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <KeyColumns>
+          <Column Name="FirstName" SqlDbType="NVarChar" MaxLength="20" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="FirstName" SqlDbType="NVarChar" MaxLength="20" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>8</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Andrew</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jane</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Laura</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Margaret</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Michael</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Nancy</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Robert</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Steve</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Title" SqlDbType="NVarChar" MaxLength="30" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>5</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>General Manager</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>IT Manager</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>IT Staff</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sales Manager</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sales Support Agent</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="ReportsTo" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>3</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>6</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <KeyColumns>
+          <Column Name="BirthDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="BirthDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>8</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1947-09-19T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1958-12-08T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1962-02-18T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1965-03-03T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1968-01-09T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1970-05-29T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1973-07-01T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1973-08-29T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="HireDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>7</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>2002-04-01T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2002-05-01T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2002-08-14T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2003-05-03T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2003-10-17T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2004-01-02T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2004-03-04T00:00:00.0000000</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <KeyColumns>
+          <Column Name="Address" SqlDbType="NVarChar" MaxLength="70" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Address" SqlDbType="NVarChar" MaxLength="70" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>8</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>1111 6 Ave SW</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>11120 Jasper Ave NW</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>5827 Bowness Road NW</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>590 Columbia Boulevard West</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>683 10 Street SW</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>7727B 41 Ave</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>825 8 Ave SW</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>923 7 ST NW</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <KeyColumns>
+          <Column Name="City" SqlDbType="NVarChar" MaxLength="40" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="City" SqlDbType="NVarChar" MaxLength="40" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>8</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Boise</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Calgary</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Chicago</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Houston</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Los Angales</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MataraLk</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NewYork</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SL</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="State" SqlDbType="NVarChar" MaxLength="40" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>AB</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Country" SqlDbType="NVarChar" MaxLength="40" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>1</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Canada</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <KeyColumns>
+          <Column Name="PostalCode" SqlDbType="NVarChar" MaxLength="10" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="PostalCode" SqlDbType="NVarChar" MaxLength="10" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>8</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>T1H 1Y8</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>T1K 5N8</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>T2P 2T3</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>T2P 5G3</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>T2P 5M5</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>T3B 0C5</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>T3B 1Y7</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>T5K 2N1</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Phone" SqlDbType="NVarChar" MaxLength="24" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>7</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>+1 (403) 246-9887</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>+1 (403) 262-3443</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>+1 (403) 263-4423</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>+1 (403) 456-9986</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>+1 (403) 467-3351</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>+1 (780) 428-9482</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1 (780) 836-9987</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <KeyColumns>
+          <Column Name="Fax" SqlDbType="NVarChar" MaxLength="24" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Fax" SqlDbType="NVarChar" MaxLength="24" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>8</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>+1 (403) 246-9899</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>+1 (403) 262-3322</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>+1 (403) 262-6712</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>+1 (403) 263-4289</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>+1 (403) 456-8485</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>+1 (403) 467-8772</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>+1 (780) 428-3457</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>1 (780) 836-9543</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <KeyColumns>
+          <Column Name="Email" SqlDbType="NVarChar" MaxLength="60" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{CD9B9DB7-D1A9-4AA3-9D2D-50A4D9FC3D7F}</DataSourceID>
+        <Table DataSource="ISHARA" Database="Chinook_Staging" Schema="dbo" Table="StgEmployee" RowCount="8" />
+        <Column Name="Email" SqlDbType="NVarChar" MaxLength="60" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>8</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>andrew@chinookcorp.com</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>jane@chinookcorp.com</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>laura@chinookcorp.com</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>margaret@chinookcorp.com</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>michael@chinookcorp.com</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>nancy@chinookcorp.com</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>robert@chinookcorp.com</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>steve@chinookcorp.com</Value>
+            <Count>1</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
