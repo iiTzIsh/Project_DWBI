@@ -16,7 +16,7 @@ A sample digital music store database containing:
 ---
 
 ## 🧱 Project Architecture
-
+![New Project (1)](https://github.com/user-attachments/assets/e374d779-3dba-4877-b17e-6e374e46a2af)
 ![Screenshot 2025-04-17 223845](https://github.com/user-attachments/assets/69297ecd-c950-479a-acd2-7e6f8263a0ab)
 
 1. **Source Systems**
